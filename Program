@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Ciclo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, r, area, num;
+            const double Pi = 3.14;
+            string si;
+
+            do
+            {
+            Console.WriteLine("Escoga una figura geometrica: ");
+            Console.WriteLine("1.Circulo ");
+            Console.WriteLine("2.Rectangulo ");
+            Console.WriteLine("3.Trinagulo ");
+            num = Convert.ToInt32(Console.ReadLine());
+
+            switch (num)
+            {
+                case 1: 
+                Console.WriteLine("Ingrese el radio: ");
+                r = Convert.ToInt32(Console.ReadLine());
+                area = Pi * Math.Pow(r, 2);
+                Console.WriteLine("El resultado del circulo es: " + area);
+                break;
+
+                case 2:
+                Console.WriteLine("Ingrese la base: ");
+                a = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ingrese la altura: ");
+                b = Convert.ToInt32(Console.ReadLine());
+                area = a * b;
+                Console.WriteLine("El resultado del rectangulo es: " + area);
+                break;
+
+                case 3:
+                Console.WriteLine("Ingrese la base: ");
+                a = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ingrese la altura: ");
+                b = Convert.ToInt32(Console.ReadLine());
+                area = a * b / 2;
+                Console.WriteLine("El resultado del triangulo es: " + area);
+                break;
+            }
+            Console.WriteLine("Quiere volver a sacar otro resultados de figuras geometricas: ");
+            si = Console.ReadLine();
+            }
+             while (si == "SI"  || si == "si");
+        }
+    }
+}
