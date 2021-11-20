@@ -1,9 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Ciclo
 {
@@ -11,8 +6,7 @@ namespace Ciclo
     {
         static void Main(string[] args)
         {
-            double a, b, r, area, num;
-            const double Pi = 3.14;
+            double num;
             string si;
 
             do
@@ -26,34 +20,49 @@ namespace Ciclo
             switch (num)
             {
                 case 1: 
-                Console.WriteLine("Ingrese el radio: ");
-                r = Convert.ToInt32(Console.ReadLine());
-                area = Pi * Math.Pow(r, 2);
-                Console.WriteLine("El resultado del circulo es: " + area);
+                areaCirculo();
                 break;
 
                 case 2:
-                Console.WriteLine("Ingrese la base: ");
-                a = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Ingrese la altura: ");
-                b = Convert.ToInt32(Console.ReadLine());
-                area = a * b;
-                Console.WriteLine("El resultado del rectangulo es: " + area);
+                areaRectangulo();
                 break;
 
                 case 3:
-                Console.WriteLine("Ingrese la base: ");
-                a = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Ingrese la altura: ");
-                b = Convert.ToInt32(Console.ReadLine());
-                area = a * b / 2;
-                Console.WriteLine("El resultado del triangulo es: " + area);
+                areaTringulo();
                 break;
             }
             Console.WriteLine("Quiere volver a sacar otro resultados de figuras geometricas: ");
             si = Console.ReadLine();
             }
              while (si == "SI"  || si == "si");
+        }
+        public static void areaTringulo() 
+        {
+            double a, b, area;
+            Console.WriteLine("Escribe la base: ");
+            b = Convert.ToDouble (Console.ReadLine());
+            Console.WriteLine("Escribe la altura: ");
+            a = Convert.ToDouble (Console.ReadLine());
+            area = b * a / 2;
+            Console.WriteLine("El resultado del área es: " + area);
+        }
+        public static void areaRectangulo()
+        {
+            double a, b, area;
+            Console.WriteLine("Escribe la altura: ");
+            a = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Escribe la base: ");
+            b = Convert.ToDouble(Console.ReadLine());
+            area = a * b;
+            Console.WriteLine("El resultado del área es: " + area);
+        }
+        public static void areaCirculo()
+        {
+            double r, area;
+            Console.WriteLine("Escribe el radio: ");
+            r = Convert.ToDouble(Console.ReadLine());
+            area = Math.PI*Math.Pow(r, 2);
+            Console.WriteLine("El resultado del área es: " + area);
         }
     }
 }
